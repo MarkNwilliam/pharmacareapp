@@ -76,10 +76,10 @@ $active_record = TRUE;//ci version 2.x
 
 $db['default'] = array(
     'dsn'   => '',
-    'hostname' => 'localhost',
-    'username' => '',
-    'password' => '',
-    'database' => '',
+    'hostname' => 'pharmacaredatabase.mysql.database.azure.com',
+    'username' => 'pharmacaredatabase',
+    'password' => 'Nkugwamarkwilliam@123',
+    'database' => 'pharmacare',
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,

@@ -172,6 +172,47 @@
             <!-- Invoice menu end -->
 
 
+            <!-- AI section start -->
+<li class="treeview <?php if ($this->uri->segment('1') == ("ai")) { echo "active";}else{ echo " ";}?>">
+    <a href="#">
+        <i class="fa fa-rocket"></i> <span>AI Section</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+        </span>
+    </a>
+    <ul class="treeview-menu">
+        <!-- Chatbot section -->
+        <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("chatbot")) { echo "active";}else{ echo " ";}?>">
+            <a href="<?php echo base_url('ai/chatbot')?>"><i class="fa fa-comments"></i> Chatbot</a>
+        </li>
+        <!-- Predictive Analysis section -->
+        <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("predictive_analysis")) { echo "active";}else{ echo " ";}?>">
+            <a href="<?php echo base_url('ai/predictive_analysis')?>"><i class="fa fa-line-chart"></i> Predictive Analysis</a>
+        </li>
+        <!-- Add more sections here -->
+        <!-- Example: -->
+        <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("customerbot")) { echo "active";}else{ echo " ";}?>">
+            <a href="<?php echo base_url('ai/customerbot')?>"><i class="fa fa-user"></i> Customer Bot</a>
+        </li>
+        <!-- Add more sections as needed -->
+        <!-- Manufacturer Bot Section -->
+        <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("manufacturerbot")) { echo "active";}else{ echo " ";}?>">
+            <a href="<?php echo base_url('ai/manufacturerbot')?>"><i class="fa fa-industry"></i> Manufacturer Bot</a>
+        </li>
+        <!-- Supplier Bot Section -->
+        <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("supplierbot")) { echo "active";}else{ echo " ";}?>">
+            <a href="<?php echo base_url('ai/supplierbot')?>"><i class="fa fa-truck"></i> Supplier Bot</a>
+        </li>
+        <!-- Tax Bot Section -->
+        <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("taxbot")) { echo "active";}else{ echo " ";}?>">
+            <a href="<?php echo base_url('ai/taxbot')?>"><i class="fa fa-dollar"></i> Tax Bot</a>
+        </li>
+        <!-- Add more sections as needed -->
+    </ul>
+</li>
+<!-- AI section end -->
+
+
             <!-- Customer menu start -->
             <?php
             if($this->permission1->module('add_customer')->access() || $this->permission1->module('manage_customer')->access() || $this->permission1->module('credit_customer')->access() || $this->permission1->module('paid_customer')->access()) { ?>
