@@ -78,7 +78,7 @@
             <small>Just ask</small>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/pharmacy_test/" class="green-text"><i class="pe-7s-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"><a href="/" class="green-text"><i class="pe-7s-home"></i> Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Chatbot</li>
                 </ol>
             </nav>
@@ -114,7 +114,7 @@ $result = $query->result_array();
                         <!-- Prompt window -->
                         <div class="prompt-window">
                             <div class="prompt">
-                                <p>Welcome! How can I assist you today?</p>
+                                <p>Welcome! lets look at the numbers</p>
                             </div>
                         </div>
                         <!-- Response window -->

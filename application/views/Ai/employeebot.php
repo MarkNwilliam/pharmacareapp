@@ -78,7 +78,7 @@
             <small>Just ask</small>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/pharmacy_test/" class="green-text"><i class="pe-7s-home"></i> Home</a></li>
+                    <li class="breadcrumb-item"><a href="/" class="green-text"><i class="pe-7s-home"></i> Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Analysis</li>
                 </ol>
             </nav>
