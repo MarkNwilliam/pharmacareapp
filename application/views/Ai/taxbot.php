@@ -50,6 +50,23 @@
         .green-text {
             color: #28a745; /* Green color */
         }
+
+        /* Custom CSS for card */
+        .card {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-body {
+            padding: 15px;
+        }
     </style>
 
     <section class="content-header chatbot-section">
@@ -57,12 +74,12 @@
             <i class="fa fa-comments"></i>
         </div>
         <div class="header-title">
-            <h1 class="chatbot-title">Chatbot</h1>
-            <small>Interactive Chat Interface</small>
+            <h1 class="chatbot-title">Tax analysis</h1>
+            <small>Just ask</small>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/pharmacy_test/" class="green-text"><i class="pe-7s-home"></i> Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Chatbot</li>
+                    <li class="breadcrumb-item active" aria-current="page">Analysis</li>
                 </ol>
             </nav>
         </div>
@@ -86,7 +103,7 @@
 $this->load->database();
 
 // Fetch product information from the database
-$query = $this->db->get('payroll_tax_setup');
+$query = $this->db->get('customer_information');
 $result = $query->result_array();
 ?>
 
@@ -139,33 +156,51 @@ $result = $query->result_array();
     }
 
 
-    document.getElementById('sendMessage').addEventListener('click', function() {
+
+        document.getElementById('sendMessage').addEventListener('click', function () {
         var userMessage = document.getElementById('userMessage').value;
 
         // Create JSON data with prompt
         var requestData = {
             "prompt": userMessage,
-            "csvData": resultString 
         };
 
         // Send AJAX request to the FastAPI server
-        fetch('http://localhost:8000/generate-response', {
+        fetch('http://40.90.255.61:3000/tax_analysis', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(requestData)
         })
-        .then(response => response.json())
-        .then(data => {
-            // Display bot response
-            var responseMessageElement = document.createElement('div');
-            responseMessageElement.textContent = 'Bot: ' + data.message;
-            document.querySelector('.response-window').appendChild(responseMessageElement);
+            .then(response => response.json())
+            .then(data => {
+                // Display bot response
+                var responseCard = document.createElement('div');
+                responseCard.className = 'card';
 
-            // Clear user input field
-            document.getElementById('userMessage').value = '';
-        })
-        .catch(error => console.error('Error:', error));
+                var cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                var responseMessageElement = document.createElement('p');
+                responseMessageElement.textContent = 'Bot: ' + data.result.aiOutput;
+                cardBody.appendChild(responseMessageElement);
+
+                // Append image URLs to the card body
+                data.result.imageUrls.forEach(imageUrl => {
+                    var imageElement = document.createElement('img');
+                    imageElement.src = imageUrl;
+                    imageElement.className = 'img-fluid'; // Bootstrap class to make image responsive
+                    cardBody.appendChild(imageElement);
+                });
+
+                responseCard.appendChild(cardBody);
+
+                document.querySelector('.response-window').appendChild(responseCard);
+
+                // Clear user input field
+                document.getElementById('userMessage').value = '';
+            })
+            .catch(error => console.error('Error:', error));
     });
 </script>

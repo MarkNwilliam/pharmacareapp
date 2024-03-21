@@ -192,20 +192,20 @@
         <!-- Add more sections here -->
         <!-- Example: -->
         <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("customerbot")) { echo "active";}else{ echo " ";}?>">
-            <a href="<?php echo base_url('ai/customerbot')?>"><i class="fa fa-user"></i> Customer Bot</a>
+            <a href="<?php echo base_url('ai/customerbot')?>"><i class="fa fa-user"></i> Customer Analysis</a>
         </li>
         <!-- Add more sections as needed -->
         <!-- Manufacturer Bot Section -->
         <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("manufacturerbot")) { echo "active";}else{ echo " ";}?>">
-            <a href="<?php echo base_url('ai/manufacturerbot')?>"><i class="fa fa-industry"></i> Manufacturer Bot</a>
+            <a href="<?php echo base_url('ai/manufacturerbot')?>"><i class="fa fa-industry"></i> Manufacturer Analysis</a>
         </li>
         <!-- Supplier Bot Section -->
         <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("supplierbot")) { echo "active";}else{ echo " ";}?>">
-            <a href="<?php echo base_url('ai/supplierbot')?>"><i class="fa fa-truck"></i> Supplier Bot</a>
+            <a href="<?php echo base_url('ai/supplierbot')?>"><i class="fa fa-truck"></i> Supplier Analysis</a>
         </li>
         <!-- Tax Bot Section -->
         <li class="<?php if ($this->uri->segment('1') == ("ai") && $this->uri->segment('2') == ("taxbot")) { echo "active";}else{ echo " ";}?>">
-            <a href="<?php echo base_url('ai/taxbot')?>"><i class="fa fa-dollar"></i> Tax Bot</a>
+            <a href="<?php echo base_url('ai/taxbot')?>"><i class="fa fa-dollar"></i> Tax Analysis</a>
         </li>
         <!-- Add more sections as needed -->
     </ul>

@@ -79,11 +79,7 @@ $db['default'] = array(
     'hostname' => 'pharmacaredatabase.mysql.database.azure.com',
     'username' => 'pharmacaredatabase',
     'password' => 'Nkugwamarkwilliam@123',
-<<<<<<< HEAD
-    'database' => 'pharmacacy',
-=======
     'database' => 'pharmacare',
->>>>>>> 2af1f55e77cf4cd288c19afe4350c154bb1b09e8
     'dbdriver' => 'mysqli',
     'dbprefix' => '',
     'pconnect' => FALSE,
